@@ -1,229 +1,263 @@
-Online Quiz Platform
+## 🚀 Project Overview
 
-Project Overview:
-The Online Quiz Platform is a full-stack web application built on the MERN stack. It provides a dynamic and engaging environment for users to take quizzes and for administrators to easily create and manage content.
+This is a full-stack **MERN Online Quiz Platform** built to provide a smart and interactive learning experience. Users can attempt quizzes, view their progress, and get instant results, while admins can create and manage quiz content with ease.
+The system also includes **AI-powered question generation** to help admins quickly prepare quizzes.
 
-✨ Features
-🔐 Authentication & Security
+---
 
-Secure JWT-based authentication
-Role-based access control (User/Admin)
-Protected routes and API endpoints
+## ✨ **Key Features**
 
-🤖 AI-Powered Content Generation
+### 🔐 **Secure Authentication**
 
-Automatic question generation using Google Gemini API
-Intelligent multiple-choice question creation
-AI-generated answer explanations
+* JWT-based login & registration
+* Role-based access (User / Admin)
+* Protected API routes
 
-📊 Interactive Quiz Experience
+### 🤖 **AI Question Generator**
 
-Real-time timer functionality
-Instant score calculation
-Detailed performance analytics
-Progress tracking
+* Powered by **Google Gemini API**
+* Automatically generates MCQs
+* Creates explanations for answers
 
-👨‍💼 Comprehensive Admin Dashboard
+### 📝 **Quiz Experience**
 
-Create, edit, and delete quizzes
-Visual performance statistics with charts
-User submission management
-Searchable data tables
+* Live timer
+* Auto calculation of score
+* Summary & detailed result view
+* Progress tracking dashboard
 
-📱 Modern UI/UX
+### 🛠️ **Admin Controls**
 
-Responsive dark-themed design
-Built with Tailwind CSS
-Mobile-first approach
-Intuitive user interface
+* Create / edit / delete quizzes
+* AI-assisted question creation
+* View results, attempts, statistics
+* Searchable and sortable tables
 
-🛠️ Tech Stack
-Frontend:
+### 🎨 **Modern UI**
 
-React.js with Vite
-Tailwind CSS
-React Router
-Axios
+* Fully responsive
+* Clean dark theme
+* Built with **TailwindCSS + React**
+* Vite bundler for faster development
 
-Backend:
+---
 
-Node.js
-Express.js
-MongoDB with Mongoose
-JWT Authentication
+## 🧰 **Tech Stack**
 
-APIs & Services:
+### **Frontend**
 
-Google Gemini API
-RESTful API architecture
+* React.js
+* Vite
+* Tailwind CSS
+* Axios
+* React Router
 
-📋 Prerequisites
-Before you begin, ensure you have the following installed:
+### **Backend**
 
-Node.js (v14.x or higher)
-npm (v6.x or higher)
-MongoDB (Local installation or Atlas cluster)
-Google Gemini API Key
+* Node.js
+* Express
+* MongoDB & Mongoose
+* JWT Authentication
 
-⚡ Quick Start
-1. Clone the Repository
-bashgit clone (https://github.com/uvhemanth6/online-quiz-platform.git)
-cd edubot-quiz-platform
-2. Backend Setup
-bash# Navigate to backend directory
+### **Third-Party Services**
+
+* Google Gemini API
+* REST APIs
+
+---
+
+## 📦 **Prerequisites**
+
+Install these before setup:
+
+* Node.js
+* npm
+* MongoDB (local or Atlas)
+* Gemini API Key
+
+---
+
+## ⚡ **Project Setup**
+
+### **1️⃣ Clone Repository**
+
+```bash
+git clone <your_repo_link>
+cd online-quiz-platform
+```
+
+---
+
+## **2️⃣ Backend Setup**
+
+```bash
 cd backend
-
-# Install dependencies
 npm install
+```
 
-# Create environment file
-cp .env.example .env
-Configure your .env file:
-envPORT=5000
+Create `/.env` file
+
+```
+PORT=5000
 MONGO_URI=mongodb://localhost:27017/quizdb
-JWT_SECRET=your_super_secret_jwt_key_here
+JWT_SECRET=your_jwt_secret_here
 JWT_EXPIRE=1h
 NODE_ENV=development
-bash# Start the backend server
+```
+
+Start backend:
+
+```bash
 npm run dev
-🚀 Backend server running at http://localhost:5000
-3. Frontend Setup
-bash# Open new terminal and navigate to frontend
+```
+
+Backend runs on: **[http://localhost:5000](http://localhost:5000)**
+
+---
+
+## **3️⃣ Frontend Setup**
+
+```bash
 cd frontend
-
-# Install dependencies
 npm install
+```
 
-# Create environment file
-cp .env.example .env
-Configure your frontend .env file:
-envVITE_API_BASE_URL=http://localhost:5000/api
-VITE_GEMINI_API_KEY=your_google_gemini_api_key_here
-bash# Start the frontend development server
+Create `/.env` file:
+
+```
+VITE_API_BASE_URL=http://localhost:5000/api
+VITE_GEMINI_API_KEY=your_gemini_api_key
+```
+
+Start frontend:
+
+```bash
 npm run dev
-🎉 Application live at http://localhost:5173
-📖 Usage Guide
-For Users
+```
 
-Registration: Create your account at /register
-Login: Access your dashboard at /login
-Take Quizzes: Browse and start quizzes from your dashboard
-View Results: Check detailed results and AI explanations
-Track Progress: Monitor your performance over time
+Frontend runs on: **[http://localhost:5173](http://localhost:5173)**
 
-For Administrators
+---
 
-Admin Access: Login with admin credentials
-Dashboard: View comprehensive analytics and user data
-Create Quiz:
+## 📖 **User Guide**
 
-Navigate to /create-quiz
-Fill in quiz details
-Use AI generation for instant question creation
+### **For Users**
 
+* Register → `/register`
+* Login → `/login`
+* Choose quiz & start test
+* Get results instantly
+* Check previous attempts
 
-Manage Content: Edit or delete existing quizzes
-Monitor Performance: Track user engagement and quiz statistics
+### **For Admins**
 
-🗂️ Project Structure
-edubot-quiz-platform/
+* Login with admin role
+* Create quizzes (manual or AI-generated)
+* Update quiz details
+* Delete quizzes
+* Monitor stats and user attempts
+
+---
+
+## 🗂️ **Project Folder Structure**
+
+```
+online-quiz-platform/
+│
 ├── backend/
-│   ├── controllers/          # Route controllers
-│   ├── middleware/          # Custom middleware
-│   ├── models/              # MongoDB schemas
-│   ├── routes/              # API routes
-│   ├── utils/               # Utility functions
-│   ├── config/              # Database configuration
-│   └── server.js            # Entry point
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── middleware/
+│   ├── config/
+│   └── server.js
+│
 ├── frontend/
 │   ├── src/
-│   │   ├── components/      # React components
-│   │   ├── pages/           # Page components
-│   │   ├── hooks/           # Custom hooks
-│   │   ├── utils/           # Helper functions
-│   │   ├── context/         # React context
-│   │   └── App.jsx          # Main App component
-│   ├── public/              # Static assets
-│   └── index.html           # HTML template
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── hooks/
+│   │   ├── utils/
+│   │   └── App.jsx
+│   └── public/
+│
 └── README.md
-🔧 API Endpoints
-Authentication
+```
 
-POST /api/auth/register - User registration
-POST /api/auth/login - User login
-GET /api/auth/profile - Get user profile
+---
 
-Quizzes
+## 🔧 **Important API Routes**
 
-GET /api/quizzes - Get all quizzes
-POST /api/quizzes - Create new quiz (Admin)
-PUT /api/quizzes/:id - Update quiz (Admin)
-DELETE /api/quizzes/:id - Delete quiz (Admin)
+### **Auth**
 
-Results
+* `POST /api/auth/register`
+* `POST /api/auth/login`
+* `GET /api/auth/profile`
 
-POST /api/results - Submit quiz results
-GET /api/results/user/:userId - Get user results
-GET /api/results/quiz/:quizId - Get quiz statistics (Admin)
+### **Quizzes**
 
-🧪 Testing
-bash# Run backend tests
+* `GET /api/quizzes`
+* `POST /api/quizzes` (admin)
+* `PUT /api/quizzes/:id` (admin)
+* `DELETE /api/quizzes/:id` (admin)
+
+### **Results**
+
+* `POST /api/results`
+* `GET /api/results/user/:id`
+* `GET /api/results/quiz/:id`
+
+---
+
+## 🧪 **Testing**
+
+```bash
 cd backend
 npm test
+```
 
-# Run frontend tests
+```bash
 cd frontend
 npm test
+```
 
-# Run integration tests
-npm run test:integration
-📦 Deployment
-Using Docker
-bash# Build and run with Docker Compose
+---
+
+## 🚀 **Deployment**
+
+### **With Docker**
+
+```bash
 docker-compose up --build
-Manual Deployment
+```
 
-Backend: Deploy to services like Heroku, Vercel, or DigitalOcean
-Frontend: Deploy to Netlify, Vercel, or GitHub Pages
-Database: Use MongoDB Atlas for production
+### **Manual**
 
-Environment Variables for Production
-envNODE_ENV=production
-MONGO_URI=your_mongodb_atlas_connection_string
-JWT_SECRET=your_production_jwt_secret
-FRONTEND_URL=(https://online-quiz-platform-e6ca.onrender.com/)
-🤝 Contributing
-We welcome contributions! Please follow these steps:
+* Backend → Render / Railway / DigitalOcean
+* Frontend → Netlify / Vercel
+* Database → MongoDB Atlas
 
-Fork the repository
-Create your feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some AmazingFeature')
-Push to the branch (git push origin feature/AmazingFeature)
-Open a Pull Request
+Production env:
 
-Development Guidelines
+```
+NODE_ENV=production
+MONGO_URI=your_atlas_url
+JWT_SECRET=your_prod_secret
+FRONTEND_URL=your_frontend_url
+```
 
-Follow the existing code style
-Write meaningful commit messages
-Add tests for new features
-Update documentation as needed
+---
 
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+## 👤 **Author**
 
-👥 Authors
+**Harsh Sharma**
+Email: harshsharma49411@gmail.com
 
-UMMADISETTY VENKATA HEMANTH  - (https://github.com/uvhemanth6)
+---
 
-🙏 Acknowledgments
+## 🙏 Acknowledgements
 
-Google Gemini API for AI-powered question generation
-MongoDB for database solutions
-Tailwind CSS for the amazing styling framework
-React community for continuous inspiration
-
-📞 Support
-If you have any questions or need help:
-
-📧 Email: venkatahemanth488@gmail.com
-🐛 Issues: GitHub Issues
+* Google Gemini API
+* MongoDB
+* React Community
+* TailwindCSS
